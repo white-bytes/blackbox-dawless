@@ -1,4 +1,4 @@
-'use client';
+
 
 import * as React from 'react';
 import { Code, Github } from 'lucide-react';
@@ -16,7 +16,7 @@ import { SequencerView } from '@/views/sequencer-view';
 
 type View = 'synth' | 'sequencer' | 'daw';
 
-export default function DashboardPage() {
+export function Dashboard() {
   const [view, setView] = useState<View>('synth');
 
   return (
@@ -40,7 +40,7 @@ export default function DashboardPage() {
           <Separator orientation="vertical" className="h-6" />
           <CmakeModal />
           <Button variant="ghost" size="icon" asChild>
-            <a href="https://github.com/firebase/studio" target="_blank" rel="noreferrer">
+            <a href="#" target="_blank" rel="noreferrer">
               <Github className="h-5 w-5" />
               <span className="sr-only">GitHub</span>
             </a>

@@ -1,5 +1,7 @@
-# Firebase Studio
+#BlackBox-DAwless Control Surface Project
 
-This is a NextJS starter in Firebase Studio.
+## Polyphonic Blackbox
 
-To get started, take a look at src/app/page.tsx.
+A virtual-analog synthesizer interface built with Astro, React, and Tailwind CSS.
+
+---
