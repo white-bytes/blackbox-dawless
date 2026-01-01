@@ -4,6 +4,7 @@ import { Play, StopCircle, Mic, Volume2 } from 'lucide-react';
 import { SynthModule } from '@/components/synth-module';
 import { Button } from '@/components/ui/button';
 import { Slider } from '@/components/ui/slider';
+import { ControlGroup } from '@/components/control-group';
 
 export function DawView() {
   return (
@@ -24,20 +25,32 @@ export function DawView() {
           </Button>
         </div>
       </SynthModule>
-      <SynthModule title="Mixer" className="lg:col-span-2">
-        <div className="grid grid-cols-4 md:grid-cols-8 gap-x-4 gap-y-2 justify-items-center">
+      <SynthModule title="Master" className="lg:col-span-2">
+         <div className="grid gap-6">
+            <ControlGroup label="Master Volume">
+              <Slider defaultValue={[75]} max={100} step={1} />
+            </ControlGroup>
+             <ControlGroup label="Master Reverb">
+              <Slider defaultValue={[20]} max={100} step={1} />
+            </ControlGroup>
+          </div>
+      </SynthModule>
+       <SynthModule title="Mixer" className="lg:col-span-3">
+        <div className="grid grid-cols-4 md:grid-cols-8 gap-x-6 gap-y-4 justify-items-center">
           {[...Array(8)].map((_, i) => (
-            <div key={i} className="grid gap-2 justify-items-center">
-              <Slider
-                defaultValue={[Math.floor(Math.random() * 75) + 10]}
-                max={100}
-                step={1}
-                orientation="vertical"
-                className="h-32"
-              />
-               <Button variant="outline" size="sm" className="w-full">
-                <Volume2 className="h-4 w-4 mr-2" /> {i + 1}
-              </Button>
+            <div key={i} className="grid gap-2 justify-items-center w-full">
+              <ControlGroup label={`Track ${i + 1}`} className="w-full grid justify-items-center">
+                <Slider
+                  defaultValue={[Math.floor(Math.random() * 75) + 10]}
+                  max={100}
+                  step={1}
+                  orientation="vertical"
+                  className="h-32"
+                />
+                 <Button variant="outline" size="sm" className="w-full mt-2">
+                  <Volume2 className="h-4 w-4 mr-2" /> M
+                </Button>
+              </ControlGroup>
             </div>
           ))}
         </div>

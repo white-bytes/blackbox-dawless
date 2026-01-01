@@ -1,7 +1,7 @@
 'use client';
 
 import * as React from 'react';
-import { Cpu, Code, Github } from 'lucide-react';
+import { Code, Github } from 'lucide-react';
 import { useState } from 'react';
 
 import { Logo } from '@/components/logo';
@@ -12,11 +12,12 @@ import { DawView } from '@/views/daw-view';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { SequencerView } from '@/views/sequencer-view';
 
-type Mode = 'synth' | 'daw';
+type View = 'synth' | 'sequencer' | 'daw';
 
 export default function DashboardPage() {
-  const [mode, setMode] = useState<Mode>('synth');
+  const [view, setView] = useState<View>('synth');
 
   return (
     <div className="flex min-h-screen w-full flex-col">
@@ -26,10 +27,11 @@ export default function DashboardPage() {
           <h1 className="text-lg font-semibold md:text-xl">Polyphonic Blackbox</h1>
         </div>
         <div className="flex flex-1 items-center justify-center">
-          <Tabs value={mode} onValueChange={(value) => setMode(value as Mode)} className="mx-auto">
+          <Tabs value={view} onValueChange={(value) => setView(value as View)} className="mx-auto">
             <TabsList>
-              <TabsTrigger value="synth">Synth Engine</TabsTrigger>
-              <TabsTrigger value="daw">DAW Controller</TabsTrigger>
+              <TabsTrigger value="synth">Synth</TabsTrigger>
+              <TabsTrigger value="sequencer">Sequencer</TabsTrigger>
+              <TabsTrigger value="daw">DAW</TabsTrigger>
             </TabsList>
           </Tabs>
         </div>
@@ -45,8 +47,10 @@ export default function DashboardPage() {
           </Button>
         </div>
       </header>
-      <main className="flex flex-1 flex-col gap-4 p-4 md:gap-8 md:p-8">
-        {mode === 'synth' ? <SynthView /> : <DawView />}
+      <main className="flex-1 overflow-auto p-4 md:p-8">
+        {view === 'synth' && <SynthView />}
+        {view === 'sequencer' && <SequencerView />}
+        {view === 'daw' && <DawView />}
       </main>
     </div>
   );

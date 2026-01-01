@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { cn } from '@/lib/utils';
 import { Toaster } from '@/components/ui/toaster';
+import { WoodPanels } from '@/components/wood-panels';
 
 export const metadata: Metadata = {
   title: 'Polyphonic Blackbox',
@@ -24,7 +25,10 @@ export default function RootLayout({
         />
       </head>
       <body className={cn('font-body antialiased', 'min-h-screen bg-background font-sans')}>
-        {children}
+        <div className="relative flex min-h-screen">
+          <WoodPanels />
+          <main className="flex-1 flex flex-col">{children}</main>
+        </div>
         <Toaster />
       </body>
     </html>
