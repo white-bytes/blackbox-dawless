@@ -163,9 +163,10 @@ export function NSynthView() {
               <ul className="space-y-1">
                 <li>
                   <a 
-                    href="/docs/open-nsynth-super-integration.md" 
+                    href="https://github.com/white-bytes/blackbox-dawless/blob/main/docs/open-nsynth-super-integration.md" 
                     className="text-primary hover:underline"
                     target="_blank"
+                    rel="noreferrer"
                   >
                     → Integration Guide
                   </a>
