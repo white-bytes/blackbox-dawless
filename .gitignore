@@ -27,3 +27,6 @@
 # firebase
 firebase-debug.log
 firestore-debug.log
+
+# typescript
+*.tsbuildinfo

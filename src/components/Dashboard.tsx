@@ -13,8 +13,9 @@ import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { SequencerView } from '@/views/sequencer-view';
+import { NSynthView } from '@/views/nsynth-view';
 
-type View = 'synth' | 'sequencer' | 'daw';
+type View = 'synth' | 'sequencer' | 'daw' | 'nsynth';
 
 export function Dashboard() {
   const [view, setView] = useState<View>('synth');
@@ -32,6 +33,7 @@ export function Dashboard() {
               <TabsTrigger value="synth">Synth</TabsTrigger>
               <TabsTrigger value="sequencer">Sequencer</TabsTrigger>
               <TabsTrigger value="daw">DAW</TabsTrigger>
+              <TabsTrigger value="nsynth">NSynth</TabsTrigger>
             </TabsList>
           </Tabs>
         </div>
@@ -51,6 +53,7 @@ export function Dashboard() {
         {view === 'synth' && <SynthView />}
         {view === 'sequencer' && <SequencerView />}
         {view === 'daw' && <DawView />}
+        {view === 'nsynth' && <NSynthView />}
       </main>
     </div>
   );
