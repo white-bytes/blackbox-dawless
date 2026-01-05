@@ -276,7 +276,7 @@ export function NSynthView() {
 - **Polyphony:** 4 voices
 - **Storage:** microSD card for sample sets
 - **MIDI:** 5-pin DIN input (receives MIDI notes)
-- **Display:** Small OLED screen + touchscreen
+- **Display:** Touchscreen display with OLED indicators
 - **Power:** 5V via micro-USB
 - **Dimensions:** ~20cm x 20cm x 5cm (with standard case)
 
@@ -350,4 +350,7 @@ If you develop interesting integrations or workflows, consider:
 
 ---
 
-**Note:** Open NSynth Super repository is archived, but the hardware and software remain fully functional and the community continues to build and use these devices.
+**Note:** The official Open NSynth Super repository is archived, but the hardware and software remain fully functional. The community continues to build and use these devices. For updated build instructions, troubleshooting help, or community forks, check:
+- [Hackaday.io Project Page](https://hackaday.io/project/89396-open-nsynth-super) - Active community discussions
+- Music tech forums (Lines, Muffwiggler, Reddit's r/synthdiy)
+- GitHub forks and community adaptations
